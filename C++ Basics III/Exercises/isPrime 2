@@ -1,0 +1,37 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+/*
+  This is exercise 2
+*/
+void isPrime(int x){
+    int prime = x;
+    for(int factor = 2; factor <= sqrt(x); factor++){
+        if(x % factor == 0){
+            prime = 0;
+            break;
+        }
+    }
+    cout << x << " is ";
+    switch(prime){
+    case 0:
+        cout << "Composite\n";
+        break;
+    case 1:
+        cout << "One\n";
+        break;
+    default:
+        cout << "Prime\n";
+        break;
+    }
+    return;
+}
+
+int main(){
+
+    for(int i = 1; i <= 100; i++){
+        isPrime(i);
+    }
+    return 0;
+}
