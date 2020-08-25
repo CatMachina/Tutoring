@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    // Notice the gap
+    int X;
+    cin >> X;
+    bool prime = 1;
+    for(int i = 2; i < X; i++){
+        // Here it is again
+        if(X%i==0){
+            // And again
+            prime = 0;
+            break;
+        }
+    }
+}
+
