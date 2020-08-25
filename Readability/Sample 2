@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{ // Curly braces can also be spaced out like this
+    int X;
+    cin >> X;
+    bool prime = 1;
+    for(int i = 2; i < X; i++)
+    { // Like this!
+        if(X%i==0)
+        { // Like this
+            prime = 0;
+            break;
+        }
+    }
+}
+
