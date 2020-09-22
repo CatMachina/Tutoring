@@ -1,0 +1,46 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+bool isPrime(int x)
+{
+    for(int factor = 2; factor <= sqrt(x); factor++)
+    {
+        if(x % factor == 0)
+        {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+int main()
+{
+    int primes[100];
+    for(int i = 2, cnt = 0; cnt < 100; i++)
+    {
+        if(isPrime(i))
+        {
+            primes[cnt] = i;
+            cnt++;
+        }
+    }
+    int psa[101];
+    psa[0] = 0;
+    for(int i = 1; i <= 100; i++)
+    {
+        psa[i] = psa[i-1] + primes[i-1];
+    }
+    for(int i = 1; i < 100; i++)
+    {
+        for(int j = 1; j + i <= 100; j++)
+        {
+            // psa[b] - psa[a-1]
+            if(isPrime(psa[j + i] - psa[j-1]))
+            {
+                cout << psa[j + i] - psa[j-1] << "\n";
+            }
+        }
+    }
+}
