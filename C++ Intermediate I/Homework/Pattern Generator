@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+
+\\ This is Homework 3
+\\ This is also a CCC question on DMOJ, please understand this code in particular!
+
+void rec(int n, int k, string out)
+{
+    if(n == 0)
+    {
+        if(k == 0)
+        {
+            cout << out << "\n";
+        }
+        return;
+    }
+    if(k>0)
+    {
+        rec(n - 1, k - 1, out + "1");
+    }
+    rec(n - 1, k, out + "0");
+    return;
+}
+
+int main()
+{
+    int n, k;
+    cin >> n >> k;
+    rec(n, k, "");
+}
