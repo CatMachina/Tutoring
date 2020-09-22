@@ -5,27 +5,38 @@ using namespace std;
 \\ This is Homework 3
 \\ This is also a CCC question on DMOJ, please understand this code in particular!
 
+// n = length remaining, k = number of '1's remaining, out = string so far (e.g. "10010---")
 void rec(int n, int k, string out)
 {
+    // If no more digits remaining, string is done
     if(n == 0)
     {
+        // Only print out if it has k '1's
         if(k == 0)
         {
             cout << out << "\n";
         }
         return;
     }
+    // First transition: If has '1's remaining
     if(k>0)
     {
+        // Length goes down by 1, k goes down by 1, out = "-----1"
         rec(n - 1, k - 1, out + "1");
+        // This condition is first, since biggest number goes first
     }
+    // Second transition: Just put a '0' at the end
+    // Length goes down, k stays, out = "------0"
     rec(n - 1, k, out + "0");
     return;
 }
 
 int main()
 {
+    // Input
     int n, k;
     cin >> n >> k;
+    // Print everything
     rec(n, k, "");
 }
+
