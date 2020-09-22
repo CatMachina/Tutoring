@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int table[10][10];
+    // Fill the matrix up
+    for(int i = 0; i < 10; i++)
+    {
+        for(int j = 0; j < 10; j++)
+        {
+            table[i][j] = (i+1)*(j+1);
+        }
+    }
+
+    // Print out the matrix
+    for(int i = 0; i < 10; i++)
+    {
+        for(int j = 0; j < 10; j++)
+        {
+            cout << table[i][j] << " ";
+        }
+        cout << "\n";
+    }
+
+}
